@@ -4,5 +4,5 @@ matplotlib
 streamlit
 xgboost
 scikit-learn
-st-pages
+st-pages==0.4.0
 plotly
