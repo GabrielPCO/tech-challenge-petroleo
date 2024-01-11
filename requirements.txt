@@ -3,4 +3,4 @@ matplotlib
 streamlit
 joblib
 xgboost
-sklearn
+scikit-learn
