@@ -1,0 +1,34 @@
+[[pages]]
+path = "app.py"
+name = "Introdução"
+icon = "🛢️"
+
+[[pages]]
+path = "pages/page_2.py"
+name = "DataFrame"
+icon = "📝"
+
+[[pages]]
+path = "pages/page_3.py"
+name = "Projeto"
+icon = "📋"
+
+[[pages]]
+path = "pages/page_4.py"
+name = "Análise"
+icon = "🔎"
+
+[[pages]]
+path = "pages/page_5.py"
+name = "Modelo"
+icon = "📈"
+
+[[pages]]
+path = "pages/page_6.py"
+name = "Dashboard"
+icon = "📊"
+
+[[pages]]
+path = "pages/page_7.py"
+name = "Referências"
+icon = "📑"
