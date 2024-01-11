@@ -1,6 +1,7 @@
 # Libs
 
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 import xgboost as xgb
 
@@ -29,10 +30,10 @@ y = df_modelo['preco'].values
 SEED = 123
 
 # Separando os dados entre treino e teste
-_, X_test, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
+_, _, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
 
 # Fazendo previsões
-previsoes = modelo.predict(X_test)
+previsoes = np.load('DataFrame/previsoes.npy')
 
 '''
 ## Dashboard
