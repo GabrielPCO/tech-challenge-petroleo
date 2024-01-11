@@ -19,7 +19,7 @@ df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
 
 df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
 modelo = xgb.Booster()
-modelo.load('Modelos/modelo_xgb.json')
+modelo.load_model('Modelos/modelo_xgb.json')
 
 # Atribuindo os dados de treinamento
 X = df_modelo[['preco_lag_1','preco_lag_2','preco_lag_3']].values
