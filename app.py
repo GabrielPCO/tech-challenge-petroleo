@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # Streamlit
 
 import streamlit as st
-from st_pages import show_pages_from_config
+from st_pages import show_pages_from_config, show_pages, Page
 #from st_pages import Page, show_pages
 
 # Configurando a página
@@ -75,17 +75,17 @@ st.markdown(
 )
 
 
-#show_pages(
-#    [
-#        Page("app.py", "Introdução", "🛢️"),
-#        Page("pages/page_2.py", "DataFrame", "📝"),
-#        Page("pages/page_3.py", "Projeto", "📋"),
-#        Page("pages/page_4.py", "Análise", "🔎"),
-#        Page("pages/page_5.py", "Modelo", "📈"),
-#        Page("pages/page_6.py", "Dashboard", "📊"),
-#        Page("pages/page_7.py", "Referências", "📑"),
-#    ]
-#)
+show_pages(
+    [
+        Page("app.py", "Introdução", "🛢️"),
+        Page("pages/page_2.py", "DataFrame", "📝"),
+        Page("pages/page_3.py", "Projeto", "📋"),
+        Page("pages/page_4.py", "Análise", "🔎"),
+        Page("pages/page_5.py", "Modelo", "📈"),
+        Page("pages/page_6.py", "Dashboard", "📊"),
+        Page("pages/page_7.py", "Referências", "📑"),
+     ]
+)
 
 
 show_pages_from_config()
