@@ -5,3 +5,4 @@ joblib
 xgboost
 scikit-learn
 st-pages
+plotly
