@@ -49,14 +49,14 @@ st.markdown(
 '''
 ## DataFrame
 '''
-st.image(load_img('Imagens\dataframe.png'))
+st.image(load_img('Imagens/dataframe.png'))
 '''
 
 Os dados dispostos a seguir foram coletados da base Ipeadata disponível no site do Ipea. Os dados estão apresentados em ordem decrescente desde a data da última atualização no site oficial.
 
 
 '''
-df = read_csv_file('DataFrame\ipeadata.csv')
+df = read_csv_file('DataFrame/ipeadata.csv')
 df = df.drop(columns=df.columns[0], axis=1)
 df = df.rename(columns={"dt":"Data","preco":"Preço do barril do petróleo bruto Brent (FOB) em US$ (Dólar americano)"})
 df["Data"] = pd.to_datetime(df["Data"], format='%Y-%m-%d').dt.date

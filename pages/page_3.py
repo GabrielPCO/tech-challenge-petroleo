@@ -38,7 +38,7 @@ st.markdown(
 Nesta página, disponibilizamos um diagrama do projeto utilizado em nossa pesquisa. Nele, demonstramos todos os processos involvidos desde a captura dos dados até a construção da aplicação final com dashboard.
 
 '''
-st.image(load_img('Imagens\Projeto.png'), caption='Diagrama do projeto')
+st.image(load_img('Imagens/Projeto.png'), caption='Diagrama do projeto')
 st.divider()
 '''
 ## Detalhamento do projeto
@@ -57,7 +57,7 @@ with tab0:
     '''
     ## Captura dos dados
     '''
-    st.image(load_img('Imagens\webscraping.png'))
+    st.image(load_img('Imagens/webscraping.png'))
     '''
 
     Como mencionado anteriormente, utilizamos para nossa pesquisa a base de dados Ipeadata disponibilizada no site do Ipea. Como os dados do preço do barril de petróleo são atualizados constantemente de semana a semana, decidimos por criar um scrip em python para a captura dos dados.
@@ -70,7 +70,7 @@ with tab1:
     '''
     ## Pré-processamento e análise
     '''
-    st.image(load_img('Imagens\processamento_analise.png'))
+    st.image(load_img('Imagens/processamento_analise.png'))
     '''
 
     Os dados coletados são pré-processados para a posterior análise e também para a criação do nosso modelo de previsões do preço do barril de petróleo. O pré-processamento é uma etapa fundamental para a preparação, organização e estruturação dos dados, assim garantimos que não chegaremos a falsas conclusões e previsões por conta de valores faltantes, outliers, etc.
@@ -81,7 +81,7 @@ with tab2:
     '''
     ## Modelo em Machine Learning
     '''
-    st.image(load_img('Imagens\ml.png'))
+    st.image(load_img('Imagens/ml.png'))
     '''
 
     A próxima etapa é criar um modelo em Machine Learning para a previsão do preço do barril de petróleo. O modelo é alimentado com os nossos dados pré-processados e, então, utilizamos o algoritmo XGBRegressor (Extreme Gradient Boosting Regressor) para o seu treinamento.
@@ -92,7 +92,7 @@ with tab3:
     '''
     ## Dashboard
     '''
-    st.image(load_img('Imagens\dashboard.png'))
+    st.image(load_img('Imagens/dashboard.png'))
     '''
 
     Para o dashboard, decidimos utilizar duas abordagens. Inicialmente, utilizamos o Power BI para sua construção. Power BI é uma plataforma unificada e escalonável para autoatendimento e BI (business intelligence). De maneira geral, o Power BI é utilizado para a construção de relatórios e painéis (dashboards). Eles reúnem informações visuais e dinâmicas acerca de conjuntos de dados (datasets), e também trabalham com o processo de entrega desses resultados através de plataformas, como a própria web.
