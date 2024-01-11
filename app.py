@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 # Streamlit
 
 import streamlit as st
-from st_pages import Page, show_pages
+from st_pages import show_pages_from_config
+#from st_pages import Page, show_pages
 
 # Configurando a página
 st.set_page_config(
@@ -73,17 +74,21 @@ st.markdown(
     """ , unsafe_allow_html=True
 )
 
+'''
 show_pages(
     [
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app", "Introdução", "🛢️"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_2", "DataFrame", "📝"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_3", "Projeto", "📋"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_4", "Análise", "🔎"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_5", "Modelo", "📈"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_6", "Dashboard", "📊"),
-        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_7", "Referências", "📑"),
+        Page("app.py", "Introdução", "🛢️"),
+        Page("pages/page_2.py", "DataFrame", "📝"),
+        Page("pages/page_3.py", "Projeto", "📋"),
+        Page("pages/page_4.py", "Análise", "🔎"),
+        Page("pages/page_5.py", "Modelo", "📈"),
+        Page("pages/page_6.py", "Dashboard", "📊"),
+        Page("pages/page_7.py", "Referências", "📑"),
     ]
 )
+'''
+
+show_pages_from_config()
 
 url = 'https://br.freepik.com/vetores-gratis/ilustracao-da-industria-de-petroleo-com-ilustracao-plana-de-extracao-de-petroleo_14662397.htm#query=petroleo&position=48&from_view=search&track=sph&uuid=3ddeddeb-5751-4d62-990d-750dfb9b75b5'
 link = 'Imagem de macrovector'
