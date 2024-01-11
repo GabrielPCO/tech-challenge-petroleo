@@ -2,7 +2,7 @@ pandas
 matplotlib
 streamlit
 joblib
-xgboost
+xgboost==1.7.6
 scikit-learn
 st-pages
 plotly
