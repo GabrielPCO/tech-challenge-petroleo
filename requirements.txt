@@ -4,3 +4,4 @@ streamlit
 joblib
 xgboost
 scikit-learn
+st-pages
