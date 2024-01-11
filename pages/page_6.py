@@ -14,29 +14,31 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-df_ipeadata = pd.read_csv("DataFrame/ipeadata.csv", index_col=0)
-df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
+@st.cache
+def run_model():
+    df_ipeadata = pd.read_csv("DataFrame/ipeadata.csv", index_col=0)
+    df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
 
-df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
-modelo = xgb.Booster()
-modelo.load_model('Modelos/modelo_xgb.json')
+    df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
+    modelo = xgb.Booster()
+    modelo.load_model('Modelos/modelo_xgb.json')
 
-# Atribuindo os dados de treinamento
-X = df_modelo[['preco_lag_1','preco_lag_2','preco_lag_3']].values
-y = df_modelo['preco'].values
+    # Atribuindo os dados de treinamento
+    X = df_modelo[['preco_lag_1','preco_lag_2','preco_lag_3']].values
+    y = df_modelo['preco'].values
 
-# Criando uma seed de randomização
-SEED = 123
+    # Criando uma seed de randomização
+    SEED = 123
 
-# Separando os dados entre treino e teste
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
+    # Separando os dados entre treino e teste
+    _, X_test, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
 
-# Criando e treinando o modelo de XGBC
-model = xgb.XGBRegressor(n_estimators=100, max_depth=5, eta=0.1, seed=SEED)
-model.fit(X_train, y_train)
+    # Fazendo previsões
+    previsoes = modelo.predict(X_test)
 
-# Fazendo previsões
-previsoes = model.predict(X_test)
+    return df_ipeadata, df_modelo, y_test, previsoes
+
+df_ipeadata, df_modelo, y_test, previsoes = run_model()
 
 '''
 ## Dashboard
