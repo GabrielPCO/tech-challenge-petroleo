@@ -66,7 +66,7 @@ st.markdown(
 '''
 ## Análise exploratória
 '''
-st.image(load_img('Imagens\processamento_analise.png'))
+st.image(load_img('Imagens/processamento_analise.png'))
 '''
 
 A seguir, iremos analisar os dados do preço do barril de petróleo em relação a diversas situações que ocorreram durante o período de tempo tratado em noso dataset. 
@@ -112,7 +112,7 @@ with tab1:
 
     Os dados sobre as crises financeiras foram obtidos a partir do site investopedia.com (https://www.investopedia.com/articles/economics/08/past-recessions.asp)
     '''
-    st.image(load_img('Gráficos\crise_financeira.png'))
+    st.image(load_img('Gráficos/crise_financeira.png'))
     '''
     ### Análise
 
@@ -151,7 +151,7 @@ with tab2:
     
     Os dados geopolíticos foram obtidos a partir da wikipédia (https://en.wikipedia.org/wiki/Oil_war)
     '''
-    st.image(load_img('Gráficos\guerras.png'))
+    st.image(load_img('Gráficos/guerras.png'))
     '''
     ### Análise 
 

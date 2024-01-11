@@ -37,7 +37,7 @@ st.markdown(
 '''
 ## Modelo de previsões
 '''
-st.image(load_img('Imagens\ml.png'))
+st.image(load_img('Imagens/ml.png'))
 '''
 
 Uma das etapas do nosso projeto foi a criação e treinamento de um modelo de previsões do preço do barril de petróleo utilizando Machine Learning.
@@ -231,7 +231,7 @@ with tab3:
     '''
     ## Plotando os resultados
     '''
-    st.image(load_img('Gráficos\original_vs_previsao.png'))
+    st.image(load_img('Gráficos/original_vs_previsao.png'))
     '''
     ```python
     # Plotando resultados
@@ -258,7 +258,7 @@ with tab4:
     '''
     ## Prevendo a próxima semana
     '''
-    st.image(load_img('Gráficos\proxima_semana.png'))
+    st.image(load_img('Gráficos/proxima_semana.png'))
     '''
     ```python
     # Prevendo a próxima semana

@@ -1,7 +1,3 @@
-# Libs
-
-import pandas as pd
-
 # libs gráficas
 
 import matplotlib.pyplot as plt
@@ -21,11 +17,6 @@ st.set_page_config(
         'About': "Projeto criado para o *tech-challenge* do curso de pós-graduação da FIAP/Alura."
     }
 )
-
-# Função para a leitura da base de dados
-@st.cache_data
-def read_csv_file(file):
-    return pd.read_csv(file)
 
 # Carregamento de imagens por cach
 @st.cache_data
@@ -96,7 +87,7 @@ show_pages(
 
 url = 'https://br.freepik.com/vetores-gratis/ilustracao-da-industria-de-petroleo-com-ilustracao-plana-de-extracao-de-petroleo_14662397.htm#query=petroleo&position=48&from_view=search&track=sph&uuid=3ddeddeb-5751-4d62-990d-750dfb9b75b5'
 link = 'Imagem de macrovector'
-st.image(load_img('Imagens\petro.jpg'))
+st.image(load_img('Imagens/petro.jpg'))
 st.markdown(f'[{link}]({url}) no Freepik')
 
 '''
