@@ -75,13 +75,13 @@ st.markdown(
 
 show_pages(
     [
-        Page("app.py", "Introdução", "🛢️"),
-        Page("pages/page_2.py", "DataFrame", "📝"),
-        Page("pages/page_3.py", "Projeto", "📋"),
-        Page("pages/page_4.py", "Análise", "🔎"),
-        Page("pages/page_5.py", "Modelo", "📈"),
-        Page("pages/page_6.py", "Dashboard", "📊"),
-        Page("pages/page_7.py", "Referências", "📑"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app", "Introdução", "🛢️"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_2", "DataFrame", "📝"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_3", "Projeto", "📋"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_4", "Análise", "🔎"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_5", "Modelo", "📈"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_6", "Dashboard", "📊"),
+        Page("https://tech-challenge-petroleo-obfkqnzeymbcecjew3rxlb.streamlit.app/page_7", "Referências", "📑"),
     ]
 )
 
