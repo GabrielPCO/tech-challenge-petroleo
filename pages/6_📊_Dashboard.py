@@ -12,9 +12,6 @@ import plotly.graph_objects as go
 # Streamlit
 
 import streamlit as st
-from st_pages import show_pages_from_config
-
-show_pages_from_config()
 
 st.set_page_config(layout="wide")
 

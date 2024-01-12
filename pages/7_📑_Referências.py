@@ -1,9 +1,6 @@
 # Streamlit
 
 import streamlit as st
-from st_pages import show_pages_from_config
-
-show_pages_from_config()
 
 # Titulo de Página
 #st.title('Análise de dados: explorando dados de preço por barril do petróleo bruto tipo Brent (Ipeadata)')
