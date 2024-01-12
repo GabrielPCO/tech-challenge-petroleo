@@ -6,7 +6,7 @@ Os dados foram coletados do Ipeadata, banco de dados macroeconômicos mantido pe
 
 # Aplicativo
 O aplicativo em sí pode ser acessado pelo link abaixo:  
-'link'
+[tinyurl.com/tech-challenge-petro](http://tinyurl.com/tech-challenge-petro)
 
 # Arquivo Notebook
 Juntamente com a aplicação, está disposto o arquivo notebook com todo o processo utilizado para a criação dos DataFrames e gráficos apresentados na aplicação.
