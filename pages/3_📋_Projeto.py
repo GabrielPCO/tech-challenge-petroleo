@@ -14,7 +14,7 @@ def load_img(img):
 # Titulo de Página
 #st.title('Análise de dados: explorando dados de preço por barril do petróleo bruto tipo Brent (Ipeadata)')
 
-st.set_page_config(layout="centered")
+st.set_page_config(layout="centered",page_icon="🛢️")
 
 # Código para alinhar imagens expandidas no centro da tela e justificar textos
 st.markdown(
