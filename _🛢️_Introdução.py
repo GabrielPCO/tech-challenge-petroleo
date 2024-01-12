@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 # Streamlit
 
 import streamlit as st
-from st_pages import show_pages_from_config
 
 # Configurando a página
 st.set_page_config(
@@ -72,8 +71,6 @@ st.markdown(
     </style>
     """ , unsafe_allow_html=True
 )
-
-show_pages_from_config()
 
 url = 'https://br.freepik.com/vetores-gratis/ilustracao-da-industria-de-petroleo-com-ilustracao-plana-de-extracao-de-petroleo_14662397.htm#query=petroleo&position=48&from_view=search&track=sph&uuid=3ddeddeb-5751-4d62-990d-750dfb9b75b5'
 link = 'Imagem de macrovector'
