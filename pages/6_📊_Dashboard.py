@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 
 import streamlit as st
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",page_icon="🛢️")
 
 df_ipeadata = pd.read_csv("DataFrame/ipeadata.csv", index_col=0)
 df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
