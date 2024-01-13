@@ -4,5 +4,4 @@ matplotlib
 streamlit
 xgboost
 scikit-learn
-joblib
 plotly
