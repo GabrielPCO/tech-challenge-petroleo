@@ -1,9 +1,8 @@
 # Libs
 
 import pandas as pd
-import numpy as np
 from sklearn.model_selection import train_test_split
-import xgboost as xgb
+import joblib
 
 # Libs gráficas
 
@@ -19,8 +18,7 @@ df_ipeadata = pd.read_csv("DataFrame/ipeadata.csv", index_col=0)
 df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
 
 df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
-modelo = xgb.Booster()
-modelo.load_model('Modelos/modelo_xgb.json')
+modelo = joblib.load('Modelos\modelo_xgb.joblib')
 
 # Atribuindo os dados de treinamento
 X = df_modelo[['preco_lag_1','preco_lag_2','preco_lag_3']].values
@@ -30,10 +28,10 @@ y = df_modelo['preco'].values
 SEED = 123
 
 # Separando os dados entre treino e teste
-_, _, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
+_, X_test, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
 
 # Fazendo previsões
-previsoes = np.load('DataFrame/previsoes.npy')
+previsoes = modelo.predict(X_test)
 
 '''
 ## Dashboard

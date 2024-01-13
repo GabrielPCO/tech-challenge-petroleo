@@ -6,11 +6,6 @@ import matplotlib.pyplot as plt
 
 import streamlit as st
 
-n = 0
-
-# Titulo de Página
-#st.title('Análise de dados: explorando dados de preço por barril do petróleo bruto tipo Brent (Ipeadata)')
-
 st.set_page_config(layout="centered",page_icon="🛢️")
 
 # Carregamento de imagens por cach
