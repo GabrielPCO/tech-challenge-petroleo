@@ -87,19 +87,19 @@ with tab0:
     df_query['preco'].describe()
     ```
     ```
-    count    11074.000000
-    mean        52.754036
-    std         33.240415
+    count    11082.000000
+    mean        52.771962
+    std         33.235140
     min          9.100000
-    25%         20.385000
-    50%         47.805000
-    75%         75.547500
+    25%         20.400000
+    50%         47.845000
+    75%         75.667500
     max        143.950000
     Name: preco, dtype: float64
     ```
     Podemos perceber algumas informações importantes. Temos atualmente 11074 valores de preço do barril de petróleo, uma quantidade razoável de dados para serem explorados.
 
-    Além disso, a média de preço está em aproximadamente US\$52,75 com um desvio de US\$33,24. O preço máximo é de US\$143,95 e o mínimo de US\$09,10.
+    Além disso, a média de preço está em aproximadamente US\$52,77 com um desvio de US\$33,23. O preço máximo é de US\$143,95 e o mínimo de US\$9,10.
     '''
 with tab1:
     '''

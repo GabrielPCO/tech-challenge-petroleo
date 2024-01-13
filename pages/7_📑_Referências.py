@@ -52,4 +52,5 @@ st.markdown(
 
 7. MAKHIJANI, Charu. Machine Learning Model Deployment as a Web App using Streamlit. Medium, 2023. Disponível em: https://charumakhijani.medium.com/machine-learning-model-deployment-as-a-web-app-using-streamlit-4e542d0adf15. Acessado em: 10, janeiro de 2024.
 
+8. PŁOŃSKI, Piotr. How to save and load Xgboost in Python?. Mljar, 2021. Disponível em: https://mljar.com/blog/xgboost-save-load-python/. Acessado em: 10, janeiro de 2024.
 '''

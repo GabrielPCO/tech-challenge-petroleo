@@ -114,14 +114,14 @@ with tab1:
     ```
     ```
     <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 11074 entries, 0 to 11073
+    RangeIndex: 11082 entries, 0 to 11081
     Data columns (total 2 columns):
     #   Column  Non-Null Count  Dtype 
     ---  ------  --------------  ----- 
-    0   dt      11074 non-null  object
-    1   preco   11074 non-null  object
+    0   dt      11082 non-null  object
+    1   preco   11082 non-null  object
     dtypes: object(2)
-    memory usage: 173.2+ KB
+    memory usage: 173.3+ KB
     ```
     Pela resposta, podemos perceber que não há dados núlos em nosso dataframe. Também verificamos que tanto a coluna das data como a coluna dos preços estão com os respectivos datatypes incorretos.
 
@@ -144,7 +144,7 @@ with tab1:
     df_query.shape
     ```
     ```
-    (11074, 2)
+    (11082, 2)
     ```
 
     6. Verificando estatísticas da coluna preço
@@ -217,8 +217,8 @@ with tab2:
     print("Mean Absolute Error: ", mae)
     ```
     ```
-    Mean Squared Error:  3.1862769730266303
-    Mean Absolute Error:  1.2110971996402093
+    Mean Squared Error:  3.2000308663605552
+    Mean Absolute Error:  1.2203193575036226
     ```
     Pela resposta, temos que o erro absoluto médio e erro quadrado médio estão dentro do esperado. Assim, podemos prosseguir com a construção do modelo.
     '''
@@ -279,10 +279,7 @@ with tab5:
     '''
     ## Armazenando o modelo
     ```python
-    # Importando o Joblib para o salvamento do modelo
-    import joblib
-
     # Salvando o modelo
-    joblib.dump(model, 'Modelos\modelo_xgb.joblib')
+    model.save_model("Modelos/modelo_xgb.json")
     ```
     '''

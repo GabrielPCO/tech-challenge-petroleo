@@ -6,6 +6,7 @@ import xgboost as xgb
 
 # Libs gráficas
 
+import plotly.express as px
 import plotly.graph_objects as go
 
 # Streamlit
@@ -14,7 +15,17 @@ import streamlit as st
 
 st.set_page_config(layout="wide",page_icon="🛢️")
 
+esconder_expande = '''
+<style>
+button[title="View fullscreen"]{
+    visibility: hidden;}
+</style>
+'''
+
+st.markdown(esconder_expande, unsafe_allow_html=True)
+
 df_ipeadata = pd.read_csv("DataFrame/ipeadata.csv", index_col=0)
+df_ipeadata['dt'] = pd.to_datetime(df_ipeadata['dt'], format='%Y-%m-%d').dt.date
 df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
 
 df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
@@ -34,43 +45,21 @@ _, X_test, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, rand
 # Fazendo previsões
 previsoes = modelo.predict(X_test)
 
-'''
-## Dashboard
-'''
-
-st.divider()
-
-col1, col2 = st.columns([3,1])
+col1, col2 = st.columns([0.6,0.4])
 
 with col1:
+    '''
+    ## Modelo de previsão
+    '''
+    fig_1 = go.Figure()
+    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=y_test, line=dict(color="#070ab5"),  mode='lines', name='Original'))
+    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=previsoes, line=dict(color="#c97e04"), mode='lines', name='Previsão'))
 
-    col1_1, col1_2 = st.columns([1, 3])
-    with col1_1:
-        '''
-        ### Barril de petroleo
-        '''
-        st.metric(label='Dados totais', value=df_ipeadata.shape[0])
-        st.metric(label='Preço médio', value="US$"+str(format(df_ipeadata['preco'].mean().round(2), '.2f' )))
-        st.metric(label='Preço máximo', value="US$"+str(format(df_ipeadata['preco'].max().round(2), '.2f' )))
-        st.metric(label='Preço mínimo', value="US$"+str(format(df_ipeadata['preco'].min().round(2), '.2f' )))
-
-    with col1_2:
-        '''
-        ### Modelo de previsão
-        '''
-        fig_1 = go.Figure()
-        fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=y_test, line=dict(color="#070ab5"),  mode='lines', name='Original'))
-        fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=previsoes, line=dict(color="#c97e04"), mode='lines', name='Previsão'))
-
-        fig_1.update_layout(title='Preços Originais vs Previsões (XGBC)',
-                        xaxis_title='Data',
-                        yaxis_title='Preço')
-        st.plotly_chart(fig_1,  use_container_width = True)
+    fig_1.update_layout(title='Preços Originais vs Previsões (XGBC)',
+                    yaxis_title='Preço')
+    st.plotly_chart(fig_1,  use_container_width = True)
 
 with col2:
-    '''
-    ### Prevendo os próximos dias
-    '''
 
     option = st.selectbox(
         'Quantos dias você deseja para a previsão?',
@@ -88,12 +77,66 @@ with col2:
         # Prevendo a próxima semana
         previsoes_proxima_semana = previsoes[-7:]
         df_modelo_proxima_semana = df_modelo['dt'].iloc[-len(y_test):][-7:]
-
-
+    
     fig_2 = go.Figure()
     fig_2.add_trace(go.Scatter(x=df_modelo_proxima_semana[::-1], y=previsoes_proxima_semana[::-1], line=dict(color="#c97e04"), mode='lines+markers', name='Previsão'))
 
     fig_2.update_layout(title='Previsão dos Preços para a Próxima Semana',
-                    xaxis_title='Data',
                     yaxis_title='Preço Previsto')
+    
+    fig_2.update_xaxes(
+        dtick="D1", # sets minimal interval to day
+        tickformat="%d %b<br>%Y", # the date format you want 
+    )
+
     st.plotly_chart(fig_2,  use_container_width = True)
+
+col3, col4, col5 = st.columns([0.25,0.2,0.55])
+
+with col3:
+
+    col3_1, col3_2 = st.columns(2)
+    with col3_1:
+        '''
+        ### Barril de petroleo
+        '''
+        st.metric(label='Dados totais', value=df_ipeadata.shape[0])
+        st.metric(label='Último preço', value="US$"+str(format(df_ipeadata['preco'][-1:].values[0].round(2), '.2f' )), delta=str(format((((df_ipeadata['preco'][-1:].values[0]-df_ipeadata['preco'][-2:-1].values[0])*100)/df_ipeadata['preco'][-1:].values[0]).round(2), '.2f'))+'%')
+    with col3_2: 
+        st.metric(label='Preço médio', value="US$"+str(format(df_ipeadata['preco'].mean().round(2), '.2f' )))
+        st.metric(label='Preço máximo', value="US$"+str(format(df_ipeadata['preco'].max().round(2), '.2f' )))
+        st.metric(label='Preço mínimo', value="US$"+str(format(df_ipeadata['preco'].min().round(2), '.2f' )))
+
+with col4:
+    st.markdown("<h3 style='text-align: center;'>Acurácia do modelo</h3>", unsafe_allow_html=True)
+
+    accuracy = float(format(modelo.score(X_test, y_test)*100, '.2f'))
+
+    df_accuracy = pd.DataFrame({'names' : ['Acurácia',' '],
+                   'values' :  [accuracy, 100 - accuracy]})
+    
+    fig_3 = go.Figure()
+    
+    fig_3.add_trace(go.Pie(labels=df_accuracy['names'], values=df_accuracy['values'], name="Acurácia"))
+    
+    colors = ['#019406', '#1C1C1B']
+
+    fig_3.update_traces(hole=0.7, hoverinfo='none',  marker=dict(colors=colors), showlegend=False, textinfo='none')
+
+    fig_3.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200,
+                        annotations=[dict(text=str(df_accuracy['values'][0])+'%', x=0.5, y=0.5, font_size=20, showarrow=False)])
+
+    st.plotly_chart(fig_3,  use_container_width = True)
+
+with col5:
+    '''
+    ### Distribuição de frequência dos preços
+    '''
+
+    fig_4 = go.Figure(data=[go.Histogram(x=df_ipeadata['preco'])])
+
+    fig_4.update_traces(marker_color='#c97e04')
+
+    fig_4.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200)
+
+    st.plotly_chart(fig_4,  use_container_width = True)

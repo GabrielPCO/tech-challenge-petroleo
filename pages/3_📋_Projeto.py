@@ -83,7 +83,7 @@ with tab2:
 
     A próxima etapa é criar um modelo em Machine Learning para a previsão do preço do barril de petróleo. O modelo é alimentado com os nossos dados pré-processados e, então, utilizamos o algoritmo XGBRegressor (Extreme Gradient Boosting Regressor) para o seu treinamento.
 
-    Finalmente, salvamos o modelo em um arquivo .joblib para o posterior uso na construção dos dashboards em Power BI e streamlit.
+    Finalmente, salvamos o modelo em um arquivo .json para o posterior uso na construção dos dashboards em Power BI e streamlit.
     '''
 with tab3:
     '''
