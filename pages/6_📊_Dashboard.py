@@ -6,7 +6,6 @@ import xgboost as xgb
 
 # Libs gráficas
 
-import plotly.express as px
 import plotly.graph_objects as go
 
 # Streamlit
@@ -29,6 +28,7 @@ df_ipeadata['dt'] = pd.to_datetime(df_ipeadata['dt'], format='%Y-%m-%d').dt.date
 df_ipeadata['preco'] = df_ipeadata['preco'].str.replace(',', '.').astype(float)
 
 df_modelo = pd.read_csv("DataFrame/df_modelo.csv", index_col=0)
+
 modelo = xgb.XGBRegressor()
 modelo.load_model("Modelos/modelo_xgb.json")
 
@@ -45,6 +45,13 @@ _, X_test, _, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, rand
 # Fazendo previsões
 previsoes = modelo.predict(X_test)
 
+# Cores Dashboard
+color_1 = '#3972ED' # azul claro
+color_2 = '#2B2BB4' # azul escuro
+color_3 = '#e88b10' # laranja
+color_4 = '#449540' # verde
+color_5 = '#1C1C1B' # preto (fundo)
+
 col1, col2 = st.columns([0.6,0.4])
 
 with col1:
@@ -52,8 +59,8 @@ with col1:
     ## Modelo de previsão
     '''
     fig_1 = go.Figure()
-    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=y_test, line=dict(color="#070ab5"),  mode='lines', name='Original'))
-    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=previsoes, line=dict(color="#c97e04"), mode='lines', name='Previsão'))
+    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=y_test, line=dict(color=color_2),  mode='lines', name='Original'))
+    fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=previsoes, line=dict(color=color_3), mode='lines', name='Previsão'))
 
     fig_1.update_layout(title='Preços Originais vs Previsões (XGBC)',
                     yaxis_title='Preço')
@@ -79,14 +86,15 @@ with col2:
         df_modelo_proxima_semana = df_modelo['dt'].iloc[-len(y_test):][-7:]
     
     fig_2 = go.Figure()
-    fig_2.add_trace(go.Scatter(x=df_modelo_proxima_semana[::-1], y=previsoes_proxima_semana[::-1], line=dict(color="#c97e04"), mode='lines+markers', name='Previsão'))
+    fig_2.add_trace(go.Scatter(x=df_modelo_proxima_semana[::-1], y=previsoes_proxima_semana[::-1], line=dict(color=color_3), mode='lines+markers', name='Previsão'))
 
     fig_2.update_layout(title='Previsão dos Preços para a Próxima Semana',
+                    xaxis_title=f"{df_ipeadata['dt'][0].year}",
                     yaxis_title='Preço Previsto')
     
     fig_2.update_xaxes(
         dtick="D1", # sets minimal interval to day
-        tickformat="%d %b<br>%Y", # the date format you want 
+        tickformat="%d %b<br>(%a)", # the date format you want 
     )
 
     st.plotly_chart(fig_2,  use_container_width = True)
@@ -119,7 +127,7 @@ with col4:
     
     fig_3.add_trace(go.Pie(labels=df_accuracy['names'], values=df_accuracy['values'], name="Acurácia"))
     
-    colors = ['#019406', '#1C1C1B']
+    colors = [color_4, color_5]
 
     fig_3.update_traces(hole=0.7, hoverinfo='none',  marker=dict(colors=colors), showlegend=False, textinfo='none')
 
@@ -135,7 +143,14 @@ with col5:
 
     fig_4 = go.Figure(data=[go.Histogram(x=df_ipeadata['preco'])])
 
-    fig_4.update_traces(marker_color='#c97e04')
+    marker_color = []
+    for x in range(0,80):
+        if x == 5:
+            marker_color.append(color_2)
+        else:
+            marker_color.append(color_1)
+
+    fig_4.update_traces(marker_color=marker_color)
 
     fig_4.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200)
 
