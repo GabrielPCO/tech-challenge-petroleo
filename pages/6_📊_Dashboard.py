@@ -109,11 +109,11 @@ with col3:
         ### Barril de petroleo
         '''
         st.metric(label='Dados totais', value=df_ipeadata.shape[0])
-        st.metric(label='Último preço', value="US$"+str(format(df_ipeadata['preco'][-1:].values[0].round(2), '.2f' )), delta=str(format((((df_ipeadata['preco'][-1:].values[0]-df_ipeadata['preco'][-2:-1].values[0])*100)/df_ipeadata['preco'][-1:].values[0]).round(2), '.2f'))+'%')
+        st.metric(label='Último preço', value="US$"+str(format(df_ipeadata['preco'][-1:].values[0].round(2), '.2f' )).replace('.',','), delta=str(format((((df_ipeadata['preco'][-1:].values[0]-df_ipeadata['preco'][-2:-1].values[0])*100)/df_ipeadata['preco'][-1:].values[0]).round(2), '.2f')).replace('.',',')+'%')
     with col3_2: 
-        st.metric(label='Preço médio', value="US$"+str(format(df_ipeadata['preco'].mean().round(2), '.2f' )))
-        st.metric(label='Preço máximo', value="US$"+str(format(df_ipeadata['preco'].max().round(2), '.2f' )))
-        st.metric(label='Preço mínimo', value="US$"+str(format(df_ipeadata['preco'].min().round(2), '.2f' )))
+        st.metric(label='Preço médio', value="US$"+str(format(df_ipeadata['preco'].mean().round(2), '.2f' )).replace('.',','))
+        st.metric(label='Preço máximo', value="US$"+str(format(df_ipeadata['preco'].max().round(2), '.2f' )).replace('.',','))
+        st.metric(label='Preço mínimo', value="US$"+str(format(df_ipeadata['preco'].min().round(2), '.2f' )).replace('.',','))
 
 with col4:
     st.markdown("<h3 style='text-align: center;'>Acurácia do modelo</h3>", unsafe_allow_html=True)
@@ -132,7 +132,7 @@ with col4:
     fig_3.update_traces(hole=0.7, hoverinfo='none',  marker=dict(colors=colors), showlegend=False, textinfo='none')
 
     fig_3.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200,
-                        annotations=[dict(text=str(df_accuracy['values'][0])+'%', x=0.5, y=0.5, font_size=20, showarrow=False)])
+                        annotations=[dict(text=str(df_accuracy['values'][0]).replace('.',',')+'%', x=0.5, y=0.5, font_size=20, showarrow=False)])
 
     st.plotly_chart(fig_3,  use_container_width = True)
 
