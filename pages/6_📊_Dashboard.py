@@ -63,7 +63,9 @@ with col1:
     fig_1.add_trace(go.Scatter(x=df_modelo['dt'].iloc[-len(y_test):], y=previsoes, line=dict(color=color_3), mode='lines', name='Previsão'))
 
     fig_1.update_layout(title='Preços Originais vs Previsões (XGBC)',
-                    yaxis_title='Preço')
+                    yaxis_title='Preço',
+                    yaxis = dict(fixedrange = False))
+
     st.plotly_chart(fig_1,  use_container_width = True)
 
 with col2:
@@ -109,7 +111,9 @@ with col3:
         ### Barril de petroleo
         '''
         st.metric(label='Dados totais', value=df_ipeadata.shape[0])
-        st.metric(label='Último preço', value="US$"+str(format(df_ipeadata['preco'][-1:].values[0].round(2), '.2f' )).replace('.',','), delta=str(format((((df_ipeadata['preco'][-1:].values[0]-df_ipeadata['preco'][-2:-1].values[0])*100)/df_ipeadata['preco'][-1:].values[0]).round(2), '.2f')).replace('.',',')+'%')
+        num_01 = df_ipeadata['preco'].values[0]
+        num_02 = df_ipeadata['preco'].values[1]
+        st.metric(label='Último preço', value="US$"+str(format(df_ipeadata['preco'].values[0].round(2), '.2f' )).replace('.',','), delta=str(format((((num_01-num_02)/((num_01+num_02)/2))*100).round(2), '.2f')).replace('.',',')+'%')
     with col3_2: 
         st.metric(label='Preço médio', value="US$"+str(format(df_ipeadata['preco'].mean().round(2), '.2f' )).replace('.',','))
         st.metric(label='Preço máximo', value="US$"+str(format(df_ipeadata['preco'].max().round(2), '.2f' )).replace('.',','))
