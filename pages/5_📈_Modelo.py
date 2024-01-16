@@ -153,13 +153,13 @@ with tab1:
     df_query['preco'].describe()
     ```
     ```
-    count    11074.000000
-    mean        52.754036
-    std         33.240415
+    count    11082.000000
+    mean        52.771962
+    std         33.235140
     min          9.100000
-    25%         20.385000
-    50%         47.805000
-    75%         75.547500
+    25%         20.400000
+    50%         47.845000
+    75%         75.667500
     max        143.950000
     Name: preco, dtype: float64
     ```
@@ -171,8 +171,10 @@ with tab2:
     Aqui iniciamos a construção do nosso modelo de previsão utilizando o algorítmo XGBRegressor
     ```python
     # Importando libs de ML
+    from sklearn.metrics import mean_squared_error, mean_absolute_error
     from sklearn.model_selection import train_test_split
-    import xgboost as xgb
+    from sklearn.model_selection import GridSearchCV
+    from xgboost import XGBRegressor
 
     # Criando uma cópia do DataFrame principal
     df_modelo = df_query.copy()
@@ -195,18 +197,29 @@ with tab2:
     # Separando os dados entre treino e teste
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False, random_state=SEED)
 
+    # Selecionando os melhores parâmetros
+    param_grid = {
+
+        'n_estimators': [25, 50, 100],
+
+        'eta': [0.01, 0.1, 0.2],
+
+        'max_depth': [3, 5, 7],
+
+        'subsample': [0.8, 0.9, 1.0]
+
+    }
+
+    grid_search = GridSearchCV(XGBRegressor(), param_grid, cv=3)
+    grid_search.fit(X_train, y_train)
+    best_params = grid_search.best_params_
+
     # Criando e treinando o modelo de XGBC
-    model = xgb.XGBRegressor(n_estimators=100, max_depth=5, eta=0.1, seed=SEED)
+    model = XGBRegressor(**best_params)
     model.fit(X_train, y_train)
 
     # Fazendo previsões
     previsoes = model.predict(X_test)
-    ```
-
-    Em seguida, verificamos a erro absoluto médio e erro quadrado médio para validar a eficácia do nosso modelo 
-    ```python
-    # Importando libs de ML
-    from sklearn.metrics import mean_squared_error, mean_absolute_error
 
     # Avaliando modelo
     mse = mean_squared_error(y_test, previsoes)
@@ -217,8 +230,8 @@ with tab2:
     print("Mean Absolute Error: ", mae)
     ```
     ```
-    Mean Squared Error:  3.2000308663605552
-    Mean Absolute Error:  1.2203193575036226
+    Mean Squared Error:  3.2133570883440488
+    Mean Absolute Error:  1.2275775330161358
     ```
     Pela resposta, temos que o erro absoluto médio e erro quadrado médio estão dentro do esperado. Assim, podemos prosseguir com a construção do modelo.
     '''

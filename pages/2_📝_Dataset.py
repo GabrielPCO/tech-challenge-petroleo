@@ -44,7 +44,7 @@ st.markdown(
 )
 
 '''
-## DataFrame
+## Dataset
 '''
 st.image(load_img('Imagens/dataframe.png'))
 '''
