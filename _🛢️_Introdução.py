@@ -85,7 +85,7 @@ Links importantes:
 
 [ipeadata.gov.br](http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view) - Preço por barril do petróleo bruto Brent (FOB) (IPEADATA)
 
-[eia.doe.gov](https://www.eia.gov/dnav/pet/TblDefs/pet_pri_spt_tbldef2.asp) - Energy Information Administratio (EIA)
+[eia.doe.gov](https://www.eia.gov/dnav/pet/TblDefs/pet_pri_spt_tbldef2.asp) - U.S. Energy Information Administration (EIA), dados de consumo e produção global de petróleo
 
 Links dos integrantes do projeto:
 
@@ -104,13 +104,14 @@ st.divider()
 '''
 ## Resumo
 
-O valor dos barris de petróleo tem preços diferentes de acordo com o tipo de extração. Em suma, existem dois métodos predominantes de extração do petróleo no mercado atual, sendo eles o Brent e WTI. Nossa análise focará no preço do barril de petróleo do tipo Brent com dados coletados a partir do site governamental Ipeadata, uma base de dados macroeconômicos, financeiros e regionais do Brasil mantida pelo Ipea.
+O valor dos barris de petróleo tem preços diferentes de acordo com o tipo de extração. Em suma, existem dois métodos predominantes de extração do petróleo no mercado atual, sendo eles o Brent e WTI. Está análise será focada no preço do barril de petróleo do tipo Brent, com dados coletados a partir do site governamental Ipeadata, uma base de dados macroeconômicos, financeiros e regionais do Brasil mantida pelo Instituto de Pesquisa Econômica Aplicada.
+Tais dados provém originalmente do órgão governamental norte-americano U.S. Energy Information Administration (EIA).
 
 Produzido no Mar do Norte (Europa), Brent é uma classe de petróleo bruto que serve como benchmark para o preço internacional de diferentes tipos de petróleo. Neste caso, é valorado no chamado preço FOB (free on board), que não inclui despesa de frete e seguro no preço.
 
-A seguir, demonstramos um plano de desenvolvimento e produção de um modelo de previsões do preço do barril de petróleo do tipo Brent com os dados adquiridos do Ipeadata. Utilizamos algoritmos de regressão em Machine Learning para a construção do modelo de previsões.
+A seguir, será apresentado o plano de desenvolvimento de um modelo de previsão do preço do barril de petróleo Brent, utilizando os dados adquiridos do Ipeadata. Foram aplicados algoritmos de regressão em Machine Learning para a construção do modelo preditivo.
 
-Além disso, realizamos uma analise exploratória em relação as flutuações de preço observadas e dados de situações geopolíticas, crises econômicas e demanda global por energia. Esses fatores podem estar atrelados de alguma maneira as variações de preço encontradas nos dados brutos.
+Além disso, foi realizada uma analise exploratória dos dados com relação as flutuações de preço observadas e dados de situações geopolíticas, crises econômicas e demanda global por energia. Esses fatores podem estar atrelados de alguma maneira as variações de preço encontradas nos dados brutos.
 
 Finalmente, apresentamos ao leitor um dashboard resumindo toda a análise construida nessa pesquisa para um melhor entendimento do processo como um todo.
 '''
