@@ -117,6 +117,33 @@ Finalmente, apresentamos ao leitor um dashboard resumindo toda a análise constr
 '''
 st.divider()
 '''
+## Páginas
+
+'''
+col1, col2, col3, col4, col5, col6, col7 = st.columns([0.16,0.13,0.13,0.13,0.13,0.16,0.16])
+with col1:
+    if st.button('## Introdução', type='primary'):
+        st.switch_page("_🛢️_Introdução.py")
+with col2:
+    if st.button('## Dataset'):
+        st.switch_page("pages/2_📝_Dataset.py")
+with col3:
+    if st.button('## Projeto'):
+        st.switch_page("pages/3_📋_Projeto.py")
+with col4:
+    if st.button('## Análise'):
+        st.switch_page("pages/4_🔎_Análise.py")
+with col5:
+    if st.button('## Modelo'):
+        st.switch_page("pages/5_📈_Modelo.py")
+with col6:
+    if st.button('## Dashboard'):
+        st.switch_page("pages/6_📊_Dashboard.py")
+with col7:
+    if st.button('## Referências'):
+        st.switch_page("pages/7_📑_Referências.py")
+st.divider()
+'''
 
 ## Observação
 
