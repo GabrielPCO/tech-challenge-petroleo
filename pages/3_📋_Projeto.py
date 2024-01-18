@@ -30,7 +30,7 @@ st.markdown(
 )
 
 '''
-## O Projeto
+## O projeto
 
 A seguir, é ilustrado um diagrama de execução do Tech Challenge. Nele, são demonstradas todas as etapas e processamentos envolvidos, desde a aquisição dos dados até a construção da aplicação final com dashboard.
 

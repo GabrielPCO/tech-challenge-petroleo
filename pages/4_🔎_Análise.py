@@ -74,7 +74,7 @@ Esses eventos podem estar direta ou indiretamente ligados as variações de pre�
 '''
 st.divider()
 '''
-## Análise Geral - Power BI
+## Análise geral - Power BI
 
 '''
 
@@ -86,7 +86,7 @@ with st.container(height=790, border=False):
 st.divider()
 
 '''
-## Análise Contextual
+## Análise contextual
 
 '''
 
