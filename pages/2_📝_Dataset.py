@@ -49,7 +49,7 @@ st.markdown(
 st.image(load_img('Imagens/dataframe.png'))
 '''
 
-Os dados dispostos a seguir foram coletados da base Ipeadata disponível no site do Ipea. Os dados estão apresentados em ordem decrescente desde a data da última atualização no site oficial.
+Os dados dispostos a seguir são originalmente produzidos pelo U.S. Energy Information Administration (EIA) e disponibilizados pelo Ipea no portal Ipeadata. Os dados estão apresentados em uma tabela .csv em ordem decrescente desde a data da última atualização no site oficial.
 
 
 '''
