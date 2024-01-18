@@ -49,8 +49,11 @@ st.markdown(
 st.image(load_img('Imagens/dataframe.png'))
 '''
 
-Os dados dispostos a seguir foram coletados da base Ipeadata disponível no site do Ipea. Os dados estão apresentados em ordem decrescente desde a data da última atualização no site oficial.
+Os dados dispostos a seguir são originalmente produzidos pelo U.S. Energy Information Administration (EIA) e disponibilizados pelo Ipea no portal Ipeadata. Os dados estão apresentados em uma tabela .csv em ordem decrescente desde a data da última atualização no site oficial.
 
+[Ipea](http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view) - Preço por barril do petróleo bruto Brent (FOB) (Ipeadata)
+
+[EIA](https://www.eia.gov/dnav/pet/hist/rbrteD.htm) - Preço por barril do petróleo bruto Brent (FOB) (EIA)
 
 '''
 df = read_csv_file('DataFrame/ipeadata.csv')
