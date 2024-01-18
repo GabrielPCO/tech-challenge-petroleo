@@ -160,14 +160,3 @@ with col5:
     fig_4.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200)
 
     st.plotly_chart(fig_4,  use_container_width = True)
-
-st.divider()
-
-'''
-## Power BI
-
-'''
-
-Dashboard_Power_BI = '<iframe title="tech_challenge_fase_4_pos_tech" style="width:100%; height:100vh" src="https://app.powerbi.com/view?r=eyJrIjoiOTE3YTQ2MWQtNzc3MC00NTE3LThjOTgtYzM5YjY2ZjgyNjA2IiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>' 
-
-st.markdown(Dashboard_Power_BI, unsafe_allow_html=True)

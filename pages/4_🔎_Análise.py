@@ -73,6 +73,23 @@ Iremos explorar temas como grandes crises financeiras globais, guerras por petr�
 Esses eventos podem estar direta ou indiretamente ligados as variações de preço que encontramos ao longo dos nossos dados. Assim, seria interessante verificar e analisar com mais minúcia para gerar possíveis insights com essas comparações.
 '''
 st.divider()
+'''
+## Análise Geral - Power BI
+
+'''
+
+Dashboard_Power_BI = '<iframe title="tech_challenge_fase_4_pos_tech" style="width:100%; height:81vh" src="https://app.powerbi.com/view?r=eyJrIjoiOTE3YTQ2MWQtNzc3MC00NTE3LThjOTgtYzM5YjY2ZjgyNjA2IiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>' 
+
+with st.container(height=790, border=False):
+    st.markdown(Dashboard_Power_BI, unsafe_allow_html=True)
+
+st.divider()
+
+'''
+## Análise Contextual
+
+'''
+
 # Layout das etapas
 tab0, tab1, tab2 = st.tabs(["📊 Estatísticas",
                             "💸 Crise Financeira",
