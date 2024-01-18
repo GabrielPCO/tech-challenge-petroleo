@@ -32,36 +32,36 @@ st.markdown(
 '''
 ## O Projeto
 
-Nesta página, disponibilizamos um diagrama do projeto utilizado em nossa pesquisa. Nele, demonstramos todos os processos involvidos desde a captura dos dados até a construção da aplicação final com dashboard.
+A seguir, é ilustrado um diagrama de execução do Tech Challenge. Nele, são demonstradas todas as etapas e processamentos envolvidos, desde a aquisição dos dados até a construção da aplicação final com dashboard.
 
 '''
 st.image(load_img('Imagens/Projeto.png'), caption='Diagrama do projeto')
 st.divider()
 '''
-## Detalhamento do projeto
+## Etapas do projeto
 
-A seguir, detalhamos cada etapa exibida no diagrama para um melhor entendimento sobre o processo como um todo:
+Nesta seção, as etapas do diagrama serão detalhadas para um melhor entendimento do método aplicado no projeto:
 '''
 
 # Layout das etapas
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["Etapa 1",
-                                        "Etapa 2",
-                                        "Etapa 3",
-                                        "Etapa 4",
-                                        "Etapa 5"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["Aquisição dos dados",
+                                        "Pré-processamento e análise",
+                                        "Modelo de Machine Learning",
+                                        "Dashboard",
+                                        "Conclusão"])
 
 with tab0:
     '''
-    ## Captura dos dados
+    ## Aquisição dos dados
     '''
     st.image(load_img('Imagens/webscraping.png'))
     '''
 
-    Como mencionado anteriormente, utilizamos para nossa pesquisa a base de dados Ipeadata disponibilizada no site do Ipea. Como os dados do preço do barril de petróleo são atualizados constantemente de semana a semana, decidimos por criar um scrip em python para a captura dos dados.
+    Como mencionado anteriormente, neste projeto foi utilizada a base de dados Ipeadata disponibilizada no site do Ipea. Como os dados do preço do barril de petróleo são atualizados constantemente de semana a semana, um script em python foi criada para realizar a aquisição recorrente dos dados mais atualizados.
 
-    Esse script realiza semanalmente a raspagem dos dados disponibilizado no site, coletando-os a partir de uma grande tabela que contém o histórico de preço do barril de petróleo desde o ano de 1987 até os dias atuais.
+    Esse script realiza semanalmente a raspagem dos dados disponibilizado no site, coletando-os a partir de uma grande tabela que contém o histórico de preço do barril de petróleo desde o ano de 1987 até o presente.
 
-    Esses dados são, então, tratados e armazenados em um banco de dados Postgres e em um arquivo .csv para posterior conferência.
+    Depois, esta base de dados é tratada e armazenada em um banco de dados Postgres e em um arquivo .csv para posterior conferência.
     '''
 with tab1:
     '''
@@ -70,20 +70,20 @@ with tab1:
     st.image(load_img('Imagens/processamento_analise.png'))
     '''
 
-    Os dados coletados são pré-processados para a posterior análise e também para a criação do nosso modelo de previsões do preço do barril de petróleo. O pré-processamento é uma etapa fundamental para a preparação, organização e estruturação dos dados, assim garantimos que não chegaremos a falsas conclusões e previsões por conta de valores faltantes, outliers, etc.
+    Após a aquisição, os dados foram pré-processados para a posterior análise e também para a criação do modelo que busca prever o preço do barril de petróleo. O pré-processamento é uma etapa fundamental para a preparação, organização e estruturação dos dados, assim há maior confiabilidade nas previsões e conclusões do modelo, considerando ocorrência de valores faltantes, outliers, etc.
 
-    Em seguida, os dados são analisados em relação a diversos fatores que podem influenciar direta ou indiretamente a variação do preço do barril de petróleo. Fatores como situações geopolíticas, crises econômicas e demanda global por energia.
+    Em seguida, foi realizada uma análise exploratória dos dados com relação a diversos fatores que podem influenciar direta ou indiretamente a variação do preço do barril de petróleo. Fatores como situações geopolíticas, crises econômicas e demanda global por energia foram analisados. Nesta etapa, foi realizado o cálculo de medidas descritivas, a plotagem de gráficos e a construção de um dashboard em PowerBI.
     '''
 with tab2:
     '''
-    ## Modelo em Machine Learning
+    ## Modelo de Machine Learning
     '''
     st.image(load_img('Imagens/ml.png'))
     '''
 
-    A próxima etapa é criar um modelo em Machine Learning para a previsão do preço do barril de petróleo. O modelo é alimentado com os nossos dados pré-processados e, então, utilizamos o algoritmo XGBRegressor (Extreme Gradient Boosting Regressor) para o seu treinamento.
+    A etapa seguinte consistiu na criação de um modelo de Machine Learning para a previsão do preço do barril de petróleo. O modelo os dados pré-processados na etapa anterior e, então, o algoritmo XGBRegressor (Extreme Gradient Boosting Regressor) é aplicada no treinamento.
 
-    Finalmente, salvamos o modelo em um arquivo .json para o posterior uso na construção dos dashboards em Power BI e streamlit.
+    Por fim, o modelo foi salvo em um arquivo .json para o posterior uso na construção dos dashboards em Power BI e streamlit.
     '''
 with tab3:
     '''
@@ -100,5 +100,5 @@ with tab4:
     '''
     ## Conclusão
 
-    Com todos esses processos funcionando em conjunto temos um produto de grande valor agregado em mãos. Agora, as informações do preço do barril de petróleo estão dispostas de forma clara, susinta, organizada e atualizada, gerando um maior conforto, agilidade e produtividade para o usuário final.
+    Com todos esses processos funcionando em conjunto, tem-se um produto de grande valor agregado. Agora, as informações do preço do barril de petróleo estão dispostas de forma clara, sucinta, organizada e atualizada, gerando um maior conforto, agilidade e produtividade para o usuário final.
     '''
