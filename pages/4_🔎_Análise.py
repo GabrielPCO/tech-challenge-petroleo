@@ -66,11 +66,11 @@ st.markdown(
 st.image(load_img('Imagens/processamento_analise.png'))
 '''
 
-A seguir, iremos analisar os dados do preço do barril de petróleo em relação a diversas situações que ocorreram durante o período de tempo tratado em noso dataset. 
+A seguir, os dados do preço do barril de petróleo serão analisados em relação à ocorrência de eventos políticos e socioeconômicos de grande relevância mundial, buscando correlacionar as variações de preço com as mudanças no contexto político global. 
 
-Iremos explorar temas como grandes crises financeiras globais, guerras por petróleo e as diversas crises energéticas que eclodiram a partir dos anos de 1987 (data inicial de nossos dados) até o período atual.
+Serão explorados temas como crises financeiras globais, guerras por petróleo, crises energéticas e variações na demanda e produção de energia que ocorreram a partir de 1987 (data inicial de nossos dados) até o período atual.
 
-Esses eventos podem estar direta ou indiretamente ligados as variações de preço que encontramos ao longo dos nossos dados. Assim, seria interessante verificar e analisar com mais minúcia para gerar possíveis insights com essas comparações.
+Esses eventos podem estar direta ou indiretamente ligados às variações de preço registradas no conjunto de dados, portanto é de grande valor verificar e analisar com mais minúcia para gerar possíveis insights com essas comparações.
 '''
 st.divider()
 '''
@@ -78,7 +78,7 @@ st.divider()
 
 '''
 
-Dashboard_Power_BI = '<iframe title="tech_challenge_fase_4_pos_tech" style="width:100%; height:81%" src="https://app.powerbi.com/view?r=eyJrIjoiOTE3YTQ2MWQtNzc3MC00NTE3LThjOTgtYzM5YjY2ZjgyNjA2IiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>' 
+Dashboard_Power_BI = '<iframe title="tech_challenge_fase_4_pos_tech" style="width:100%; height:81vh" src="https://app.powerbi.com/view?r=eyJrIjoiOTE3YTQ2MWQtNzc3MC00NTE3LThjOTgtYzM5YjY2ZjgyNjA2IiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>' 
 
 with st.container(height=790, border=False):
     st.markdown(Dashboard_Power_BI, unsafe_allow_html=True)
@@ -86,6 +86,21 @@ with st.container(height=790, border=False):
 st.divider()
 
 '''
+Analisando o dashboard acima, é possível entender o contexto geral do mercado de petróleo, desde o início da série temporal até o período mais recente. Valores médios, mínimos e máximos são apresentados, seja com relação à toda série histórica ou apenas no recorte dos
+últimos 12 meses. Além disso, o dashboard possui um histograma da distribuição do preço do barril de petróleo, bem como séries temporais de consumo e produção de petróleo e ocorrência de eventos políticos que podem ter impactado negativamente o mercado de petróleo.
+
+
+Percebe-se que até o início da década de 2000, o preço do barril de petróleo nunca havia ultrapassado a marca de U$30 e havia uma certa estabilidade no mercado, com exceção do início da década de 1990, período em que a Guerra do Golfo foi travada na região do Kuwait.
+
+Então, com a escalada das desavenças entre grupos como Al-Qaeda e países do Ocidente, principalmente os EUA, a partir da década de 2000 o preço do barril de petróleo começa a crescer em ritmo muito acelerado. Diversos eventos contribuíram para este contexto de volatilidade do mercado,
+especialmente a Guerra do Iraque e a insegurança política do Oriente Médio como um todo. Em 2008, ocorre a primeira grande queda de preço (quase U$100 de queda), efeito direto da recessão econômica global originada por uma super bolha imobiliária e que levou à falência de diversos bancos importantes.
+
+Os preços voltaram a subir no final de 2008 e chegaram ao patamar de U$110/BBL em maio de 2011. Três anos, de 2011 a 2014, de recorrentes altas e quedas foram observados, evidenciando o caráter muito mais volátil do mercado no século XXI, até que na metade de 2014 mais uma grande queda de preços ocorre.
+Desta vez, a principal causa foi a redução na demanda por petróleo e o aumento da produção em países como EUA e Canadá, que passaram a extrair grandes quantidades de petróleo de xisto.
+
+Após mais um período de altos e baixos entre 2016 e 2020, ocorre a pandemia da COVID-19 que impactou de maneira devastadora tanto a produção como o consumo de petróleo no mundo. O impacto foi tão grande que o barril de petróleo chegou a custar perto de U$17. 
+Com a volta do consumo após o fim da pandemia, o mercado se recuperou rapidamente atingindo a marca de 120 U$/BBL, até que a partir de 2022 o mercado inicia uma nova fase de turbulência, marcada pela Guerra da Ucrânia e novos conflitos israelo-palestinos.
+
 ## Análise contextual
 
 '''
@@ -98,7 +113,7 @@ with tab0:
     '''
     ## Estatísticas dos dados
 
-    Inicialmente, utilizamos o método .describe() para avaliar as estatísticas básicas dos dados de preço do barril de petróleo em nosso dataset.
+    Inicialmente, a função .describe() foi utilizada para avaliar as estatísticas básicas dos dados de preço do barril de petróleo em nosso dataset.
     ```python
     # Verificando estatísticas da coluna preco
     df_query['preco'].describe()
@@ -114,7 +129,7 @@ with tab0:
     max        143.950000
     Name: preco, dtype: float64
     ```
-    Podemos perceber algumas informações importantes. Temos atualmente 11074 valores de preço do barril de petróleo, uma quantidade razoável de dados para serem explorados.
+    Atualmente, a série temporal é composta por 11074 registros de preço do barril de petróleo, uma quantidade razoável de dados para serem explorados.
 
     Além disso, a média de preço está em aproximadamente US\$52,77 com um desvio de US\$33,23. O preço máximo é de US\$143,95 e o mínimo de US\$9,10.
     '''
@@ -122,7 +137,7 @@ with tab1:
     '''
     ## Crises financeiras
 
-    Aqui, estudaremos um pouco das crises financeiras que podem estar ligadas ou terem alguma correlação com os nossos dados de preço do barril de petróleo.
+    Nesta seção, as crises financeiras serão abordadas com mais detalhes para entender se há alguma correlação com os dados de preço do barril de petróleo.
 
     Os dados sobre as crises financeiras foram obtidos a partir do site investopedia.com (https://www.investopedia.com/articles/economics/08/past-recessions.asp)
     '''
@@ -130,7 +145,7 @@ with tab1:
     '''
     ### Análise
 
-    Podemos verificar pelo gráfico que a maioria das principais recessões econômicas que tivemos no período aferido coincide com uma consideravel variação no preço do barril de petróleo. Não significa que as recessões necessariamente causaram a grande volatilidade no preço do barril, mas pode indicar que esses dois fatores possuem alguma correlação entre si.
+    Observa-se pelo gráfico que a maioria das principais recessões econômicas ocorridas no período aferido coincide com uma consideravel variação no preço do barril de petróleo. Não significa que as recessões necessariamente causaram a grande volatilidade no preço do barril, mas pode indicar que esses dois fatores possuem alguma correlação entre si.
     
     ```python
     fig, ax = plt.subplots(1, figsize=[14,4])
@@ -159,9 +174,9 @@ with tab2:
     '''
     ## Principais conflitos geopolíticos relacionados ao petróleo
 
-    Analisaremos agora a relação de conflitos bélicos e a variação dos preços de barril de petróleo ao longo do período aferido em nosso dataset.
+    Agora, será analisada a relação entre grandes conflitos armados e a variação dos preços de barril de petróleo ao longo do período abrangido pelo dataset.
 
-    Por se tratar de um produto de alta utilidade para diversos países, acreditamos que conflitos relacionados ao petróleo, sua extração, manipulação e comercialização podem influenciar nas variações observadas de preço.
+    Por se tratar de um produto de grande valor para todos os países, diversos conflitos estão relacionados ao petróleo, sua extração, manipulação e comercialização, o que pode influenciar diretamente no comportamento da série temporal do preço do barril de petróleo.
     
     Os dados geopolíticos foram obtidos a partir da wikipédia (https://en.wikipedia.org/wiki/Oil_war)
     '''
@@ -169,7 +184,8 @@ with tab2:
     '''
     ### Análise 
 
-    Podemos perceber que assim como na análise das crises financeiras, existe uma grande variação no preço do barril de petróleo que coincide com as guerras realizadas durante o perído avaliado. Notamos que existe uma certa correlação das variações com os eventos bélicos. O petróleo é a principal fonte de renda de muitos países, sobretudo o Oriente Médio. Ele é atualmente uma das pricipais fontes de energia e serve para a fabricação de variados produtos de alta utilidade. Dessa forma, podemos inferir que o petróleo é um ítem de extrema importancia e muito disputado por diversos países do globo. Assim, é plausível que a variaçã do preço do barril de petróleo tenha uma correlação com eventos de cunho bélico como observado pela comparação destacada no gráfico.
+    Assim como na análise das crises financeiras, existe uma grande variação no preço do barril de petróleo que coincide com as guerras realizadas durante o perído avaliado, portanto existe uma certa correlação das variações com os eventos bélicos. O petróleo é a principal fonte de renda de muitos países, sobretudo países do Oriente Médio. Ele é atualmente uma das pricipais fontes de energia e serve para a fabricação de variados produtos de alta utilidade.
+    Dessa forma, por ser um ítem de extrema importancia e muito disputado por diversos países do globo, é plausível que a variação do preço do barril de petróleo tenha uma correlação com guerras e outros conflitos armados.
     
     ```python
     fig, ax = plt.subplots(1, figsize=[14,4])

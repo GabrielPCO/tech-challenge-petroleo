@@ -35,13 +35,13 @@ st.markdown(
 st.image(load_img('Imagens/ml.png'))
 '''
 
-Uma das etapas do nosso projeto foi a criação e treinamento de um modelo de previsões do preço do barril de petróleo utilizando Machine Learning.
+Uma das etapas do projeto foi a criação e treinamento de um modelo de previsões do preço do barril de petróleo utilizando Machine Learning.
 
 Machine Learning é um processo de descoberta de padrões e extração de decisões de conjunto de dados desconhecidos.
 
-Os modelos de Machine Learning podem ser treinados em grandes conjuntos de dados para executar tarefas, assim como em nosso projeto para a previsão do preço futuro do barril de pretóleo.
+Os modelos de Machine Learning podem ser treinados em grandes conjuntos de dados para executar tarefas, incluindo a previsão do preços futuros do barril de pretóleo e outras séries temporais.
 
-Para tal feito precisamos utilizar algorítmos adequados aos dados com os quais estamos trabalhando. Algoritmos são técnicas matemáticas utilizadas para encontrar padrões em conjuntos de dados. Para esse projeto, decidimos utilizar o algorítmo XGBRegressor (Extreme Gradient Boosting Regresso). 
+Para isso, deve-se utilizar algorítmos adequados aos dados consumidos pelo modelo. Algoritmos são técnicas matemáticas utilizadas para encontrar padrões em conjuntos de dados. Para esse projeto, foi utilizado o algorítmo XGBRegressor (Extreme Gradient Boosting Regresso). 
 
 O aumento de gradiente (Gradient boosting) refere-se a uma classe de algoritmos de aprendizado de máquina que podem ser usados para problemas de classificação ou modelagem preditiva de regressão. Aumento extremo de gradiente, ou XGB, para abreviar, é uma implementação eficiente de código aberto do algoritmo de aumento de gradiente. Como tal, o XGB é um algoritmo, um projeto de código aberto e uma biblioteca Python. Ele foi projetado para ser computacionalmente eficiente (rápido de executar) e altamente eficaz.
 '''
@@ -49,7 +49,7 @@ st.divider()
 '''
 ## Construção do modelo
 
-A seguir, descreveremos as etapas utilizadas para a criação e treinamento do nosso modelo de previões:
+A seguir, serão descritas as etapas envolvidas na criação e treinamento do nosso modelo de previões:
 '''
 # Layout das etapas
 tab0, tab1, tab2, tab3, tab4, tab5 = st.tabs(["Etapa 1",
@@ -63,7 +63,7 @@ with tab0:
     '''
     ## Aquisição dos dados
 
-    Inicialmente, utilizamos a biblioteca SQLAlchemy para fazer a interação com o banco de dados Postgres para recuperar os dados obtidos anteriormente através da técnica de webscraping.
+    Inicialmente, utilizamos a biblioteca SQLAlchemy para fazer a interação com o banco de dados Postgres e obter os dados gerados anteriormente através da técnica de webscraping.
 
     ```python
     # Imports necessário para o sqlalchemy nessa aplicação
@@ -97,9 +97,9 @@ with tab1:
     '''
     ## Pré-processamento dos dados
 
-    Após a interação com o banco de dados, iniciamos a preparação dos dados para a criação do nosso modelo de previsões. 
+    Após a interação com o banco de dados, é realizada a preparação dos dados para a criação do nosso modelo de previsões. 
 
-    Disponibilizamos a seguir o passo a passo do tratamento dos dados:
+    O fluxo de tratamento dos dados aplicado foi o seguinte:
 
     1. Transformação do query em dataframe
     ```python
@@ -123,7 +123,7 @@ with tab1:
     dtypes: object(2)
     memory usage: 173.3+ KB
     ```
-    Pela resposta, podemos perceber que não há dados núlos em nosso dataframe. Também verificamos que tanto a coluna das data como a coluna dos preços estão com os respectivos datatypes incorretos.
+    Pela resposta, é indicado que não há dados nulos em nosso dataframe. Da mesma forma, também foi verificado que tanto a coluna das datas como a coluna dos preços estão com os respectivos dtypes incorretos.
 
 
     3. Convertendo coluna 'dt' para datetime
