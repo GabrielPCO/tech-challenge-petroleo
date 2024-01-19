@@ -92,9 +92,7 @@ with tab3:
     st.image(load_img('Imagens/dashboard.png'))
     '''
 
-    Para o dashboard, decidimos utilizar duas abordagens. Inicialmente, utilizamos o Power BI para sua construção. Power BI é uma plataforma unificada e escalonável para autoatendimento e BI (business intelligence). De maneira geral, o Power BI é utilizado para a construção de relatórios e painéis (dashboards). Eles reúnem informações visuais e dinâmicas acerca de conjuntos de dados (datasets), e também trabalham com o processo de entrega desses resultados através de plataformas, como a própria web.
-
-    Também utilizamos Streamlit para a construçã do dashboard. O Streamlit é um framework desenvolvido em Python que torna possível a criação de aplicativos elegantes para modelos de machine learning (aprendizagem de máquina) ou mesmo visualização de dados para uma simples análise exploratória de um dataset (conjunto de dados), o que o torna ideal para o nosso projeto.
+    Um segundo dashboard foi construído utilizando as próprias ferramentas do Streamlit, com o objetivo de apresentar os resultados do modelo de Machine Learning de maneira simples e eficaz. O Streamlit é um framework desenvolvido em Python que torna possível a criação de aplicativos elegantes para modelos de machine learning (aprendizagem de máquina) ou mesmo visualização de dados para uma simples análise exploratória de um dataset (conjunto de dados), o que o torna ideal para o presente projeto.
     '''
 with tab4:
     '''
