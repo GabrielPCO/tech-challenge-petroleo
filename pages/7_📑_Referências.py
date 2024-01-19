@@ -53,4 +53,8 @@ st.markdown(
 7. MAKHIJANI, Charu. Machine Learning Model Deployment as a Web App using Streamlit. Medium, 2023. Disponível em: https://charumakhijani.medium.com/machine-learning-model-deployment-as-a-web-app-using-streamlit-4e542d0adf15. Acessado em: 10, janeiro de 2024.
 
 8. PŁOŃSKI, Piotr. How to save and load Xgboost in Python?. Mljar, 2021. Disponível em: https://mljar.com/blog/xgboost-save-load-python/. Acessado em: 10, janeiro de 2024.
+
+9. LAUTENSCHLAGER, J; SHELLMAN, S; WARD, M. ICEWS Event Aggregations, 2015. https://doi.org/10.7910/DVN/28117, Harvard Dataverse, V3
+
+10. U.S. ENERGY INFORMATION ADMINISTRATION. Europe Brent Spot Price FOB, 2021. Disponível em: "https://www.eia.gov/dnav/pet/hist/RBRTED.htm". Acessado em: 19, janeiro de 2024.
 '''

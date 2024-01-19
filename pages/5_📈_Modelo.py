@@ -168,7 +168,7 @@ with tab2:
     '''
     ## Criação e treino do modelo de previsão
 
-    Aqui iniciamos a construção do nosso modelo de previsão utilizando o algorítmo XGBRegressor
+    Aqui é iniciada a construção do modelo preditivo utilizando o algorítmo XGBRegressor
     ```python
     # Importando libs de ML
     from sklearn.metrics import mean_squared_error, mean_absolute_error
@@ -233,7 +233,7 @@ with tab2:
     Mean Squared Error:  3.2133570883440488
     Mean Absolute Error:  1.2275775330161358
     ```
-    Pela resposta, temos que o erro absoluto médio e erro quadrado médio estão dentro do esperado. Assim, podemos prosseguir com a construção do modelo.
+    Pelo output gerado, verifica-se que o erro absoluto médio e erro quadrado médio estão dentro do esperado. Portanto, é possível prosseguir com a construção do modelo.
     '''
 with tab3:
     '''
