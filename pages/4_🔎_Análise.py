@@ -98,8 +98,8 @@ especialmente a Guerra do Iraque e a insegurança política do Oriente Médio co
 Os preços voltaram a subir no final de 2008 e chegaram ao patamar de U$110/BBL em maio de 2011. Três anos, de 2011 a 2014, de recorrentes altas e quedas foram observados, evidenciando o caráter muito mais volátil do mercado no século XXI, até que na metade de 2014 mais uma grande queda de preços ocorre.
 Desta vez, a principal causa foi a redução na demanda por petróleo e o aumento da produção em países como EUA e Canadá, que passaram a extrair grandes quantidades de petróleo de xisto.
 
-Após mais um período de altos e baixos entre 2016 e 2020, ocorre a pandemia da COVID-19 que impactou de maneira devastadora tanto a produção como o consumo de petróleo no mundo. O impacto foi tão grande que o barril de petróleo chegou a custar perto de U$17. 
-Com a volta do consumo após o fim da pandemia, o mercado se recuperou rapidamente atingindo a marca de 120 U$/BBL, até que a partir de 2022 o mercado inicia uma nova fase de turbulência, marcada pela Guerra da Ucrânia e novos conflitos israelo-palestinos.
+Após mais um período de altos e baixos entre 2016 e 2020, ocorre a pandemia da COVID-19 que impactou de maneira devastadora tanto a produção como o consumo de petróleo no mundo. O impacto foi tão grande que o barril de petróleo chegou a custar perto de U\$17. 
+Com a volta do consumo após o fim da pandemia, o mercado se recuperou rapidamente atingindo a marca de 120 U\$/BBL, até que a partir de 2022 o mercado inicia uma nova fase de turbulência, marcada pela Guerra da Ucrânia e novos conflitos israelo-palestinos.
 
 ## Análise contextual
 
