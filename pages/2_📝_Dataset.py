@@ -43,6 +43,37 @@ st.markdown(
     """, unsafe_allow_html=True
 )
 
+# Alterando cor dos hyperlinks
+st.markdown(
+   """
+    <style>
+     a:link {
+       color: #F63366;
+       background-color: transparent;
+       text-decoration: none;
+     }
+
+     a:visited {
+        color: #98072d;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+     a:hover {
+        color: #F63366;
+        background-color: transparent;
+        text-decoration: none;
+    }
+
+    a:active {
+        color: #F63366;
+        background-color: transparent;
+        text-decoration: none;
+    }
+    </style>
+    """ , unsafe_allow_html=True
+)
+
 '''
 ## Dataset
 '''

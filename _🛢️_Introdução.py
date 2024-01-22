@@ -113,7 +113,7 @@ A seguir, será apresentado o plano de desenvolvimento de um modelo de previsão
 
 Além disso, foi realizada uma analise exploratória dos dados com relação as flutuações de preço observadas e dados de situações geopolíticas, crises econômicas e demanda global por energia. Esses fatores podem estar atrelados de alguma maneira as variações de preço encontradas nos dados brutos.
 
-Finalmente, apresentamos ao leitor um dashboard resumindo toda a análise construida nessa pesquisa para um melhor entendimento do processo como um todo.
+Finalmente, apresentamos ao leitor um dashboard resumindo toda a análise construída nessa pesquisa para um melhor entendimento do processo como um todo.
 '''
 st.divider()
 '''

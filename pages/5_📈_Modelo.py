@@ -39,9 +39,9 @@ Uma das etapas do projeto foi a criação e treinamento de um modelo de previsõ
 
 Machine Learning é um processo de descoberta de padrões e extração de decisões de conjunto de dados desconhecidos.
 
-Os modelos de Machine Learning podem ser treinados em grandes conjuntos de dados para executar tarefas, incluindo a previsão do preços futuros do barril de pretóleo e outras séries temporais.
+Os modelos de Machine Learning podem ser treinados em grandes conjuntos de dados para executar tarefas, incluindo a previsão do preços futuros do barril de petróleo e outras séries temporais.
 
-Para isso, deve-se utilizar algorítmos adequados aos dados consumidos pelo modelo. Algoritmos são técnicas matemáticas utilizadas para encontrar padrões em conjuntos de dados. Para esse projeto, foi utilizado o algorítmo XGBRegressor (Extreme Gradient Boosting Regresso). 
+Para isso, deve-se utilizar algoritmos adequados aos dados consumidos pelo modelo. Algoritmos são técnicas matemáticas utilizadas para encontrar padrões em conjuntos de dados. Para esse projeto, foi utilizado o algorítmo XGBRegressor (Extreme Gradient Boosting Regresso). 
 
 O aumento de gradiente (Gradient boosting) refere-se a uma classe de algoritmos de aprendizado de máquina que podem ser usados para problemas de classificação ou modelagem preditiva de regressão. Aumento extremo de gradiente, ou XGB, para abreviar, é uma implementação eficiente de código aberto do algoritmo de aumento de gradiente. Como tal, o XGB é um algoritmo, um projeto de código aberto e uma biblioteca Python. Ele foi projetado para ser computacionalmente eficiente (rápido de executar) e altamente eficaz.
 '''
@@ -168,7 +168,7 @@ with tab2:
     '''
     ## Criação e treino do modelo de previsão
 
-    Aqui é iniciada a construção do modelo preditivo utilizando o algorítmo XGBRegressor
+    Aqui é iniciada a construção do modelo preditivo utilizando o algoritmo XGBRegressor
     ```python
     # Importando libs de ML
     from sklearn.metrics import mean_squared_error, mean_absolute_error

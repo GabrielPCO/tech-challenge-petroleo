@@ -145,7 +145,7 @@ with tab1:
     '''
     ### Análise
 
-    Observa-se pelo gráfico que a maioria das principais recessões econômicas ocorridas no período aferido coincide com uma consideravel variação no preço do barril de petróleo. Não significa que as recessões necessariamente causaram a grande volatilidade no preço do barril, mas pode indicar que esses dois fatores possuem alguma correlação entre si.
+    Observa-se pelo gráfico que a maioria das principais recessões econômicas ocorridas no período aferido coincide com uma considerável variação no preço do barril de petróleo. Não significa que as recessões necessariamente causaram a grande volatilidade no preço do barril, mas pode indicar que esses dois fatores possuem alguma correlação entre si.
     
     ```python
     fig, ax = plt.subplots(1, figsize=[14,4])
@@ -184,8 +184,8 @@ with tab2:
     '''
     ### Análise 
 
-    Assim como na análise das crises financeiras, existe uma grande variação no preço do barril de petróleo que coincide com as guerras realizadas durante o perído avaliado, portanto existe uma certa correlação das variações com os eventos bélicos. O petróleo é a principal fonte de renda de muitos países, sobretudo países do Oriente Médio. Ele é atualmente uma das pricipais fontes de energia e serve para a fabricação de variados produtos de alta utilidade.
-    Dessa forma, por ser um ítem de extrema importancia e muito disputado por diversos países do globo, é plausível que a variação do preço do barril de petróleo tenha uma correlação com guerras e outros conflitos armados.
+    Assim como na análise das crises financeiras, existe uma grande variação no preço do barril de petróleo que coincide com as guerras realizadas durante o período avaliado, portanto existe uma certa correlação das variações com os eventos bélicos. O petróleo é a principal fonte de renda de muitos países, sobretudo países do Oriente Médio. Ele é atualmente uma das principais fontes de energia e serve para a fabricação de variados produtos de alta utilidade.
+    Dessa forma, por ser um item de extrema importância e muito disputado por diversos países do globo, é plausível que a variação do preço do barril de petróleo tenha uma correlação com guerras e outros conflitos armados.
     
     ```python
     fig, ax = plt.subplots(1, figsize=[14,4])
