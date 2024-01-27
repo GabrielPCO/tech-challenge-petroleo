@@ -114,14 +114,14 @@ with tab1:
     ```
     ```
     <class 'pandas.core.frame.DataFrame'>
-    RangeIndex: 11082 entries, 0 to 11081
+    RangeIndex: 11092 entries, 0 to 11091
     Data columns (total 2 columns):
     #   Column  Non-Null Count  Dtype 
     ---  ------  --------------  ----- 
-    0   dt      11082 non-null  object
-    1   preco   11082 non-null  object
+    0   dt      11092 non-null  object
+    1   preco   11092 non-null  object
     dtypes: object(2)
-    memory usage: 173.3+ KB
+    memory usage: 173.4+ KB
     ```
     Pela resposta, é indicado que não há dados nulos em nosso dataframe. Da mesma forma, também foi verificado que tanto a coluna das datas como a coluna dos preços estão com os respectivos dtypes incorretos.
 
@@ -144,7 +144,7 @@ with tab1:
     df_query.shape
     ```
     ```
-    (11082, 2)
+    (11092, 2)
     ```
 
     6. Verificando estatísticas da coluna preço
@@ -153,13 +153,13 @@ with tab1:
     df_query['preco'].describe()
     ```
     ```
-    count    11082.000000
-    mean        52.771962
-    std         33.235140
+    count    11092.000000
+    mean        52.796398
+    std         33.230129
     min          9.100000
-    25%         20.400000
-    50%         47.845000
-    75%         75.667500
+    25%         20.407500
+    50%         47.900000
+    75%         75.750000
     max        143.950000
     Name: preco, dtype: float64
     ```
@@ -230,8 +230,8 @@ with tab2:
     print("Mean Absolute Error: ", mae)
     ```
     ```
-    Mean Squared Error:  3.2133570883440488
-    Mean Absolute Error:  1.2275775330161358
+    Erro quadrático médio:  3.2161789786532125
+    Erro médio absoluto:  1.2280282007497747
     ```
     Pelo output gerado, verifica-se que o erro absoluto médio e erro quadrado médio estão dentro do esperado. Portanto, é possível prosseguir com a construção do modelo.
     '''

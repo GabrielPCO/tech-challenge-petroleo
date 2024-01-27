@@ -121,25 +121,51 @@ with col3:
             st.metric(label='Preço mínimo', value="US$"+str(format(df_ipeadata['preco'].min().round(2), '.2f' )).replace('.',','))
 
 with col4:
-    st.markdown("<h3 style='text-align: center;'>Acurácia do modelo</h3>", unsafe_allow_html=True)
-
-    accuracy = float(format(modelo.score(X_test, y_test)*100, '.2f'))
-
-    df_accuracy = pd.DataFrame({'names' : ['Acurácia',' '],
-                   'values' :  [accuracy, 100 - accuracy]})
+    st.markdown("<h3 style='text-align: center;'>Erro do modelo</h3>", unsafe_allow_html=True)
+    
+    df_erro = pd.DataFrame({'names': ['Erro médio quadrado', 'Erro médio absoluto'],
+                            'values':[3.22,1.23]})
     
     fig_3 = go.Figure()
-    
-    fig_3.add_trace(go.Pie(labels=df_accuracy['names'], values=df_accuracy['values'], name="Acurácia"))
-    
-    colors = [color_4, color_5]
 
-    fig_3.update_traces(hole=0.7, hoverinfo='none',  marker=dict(colors=colors), showlegend=False, textinfo='none')
+    fig_3.add_trace(go.Bar(x=df_erro['names'], y=df_erro['values'], width=0.7))
 
-    fig_3.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200,
-                        annotations=[dict(text=str(df_accuracy['values'][0]).replace('.',',')+'%', x=0.5, y=0.5, font_size=20, showarrow=False)])
+    colors = [color_3, color_4]
+
+    fig_3.update_traces(marker_color=colors)
+
+    fig_3.update_layout(
+    autosize=False,
+    width=250,
+    height=300,
+    bargap=0.05,
+    margin=dict(
+        t=10,
+    ),
+    )
 
     st.plotly_chart(fig_3,  use_container_width = True)
+
+    #st.markdown("<h3 style='text-align: center;'>Acurácia do modelo</h3>", unsafe_allow_html=True)
+
+    #accuracy = float(format(modelo.score(X_test, y_test)*100, '.2f'))
+
+    #df_accuracy = pd.DataFrame({'names' : ['Acurácia',' '],
+    #               'values' :  [accuracy, 100 - accuracy]})
+    
+    #fig_3 = go.Figure()
+    
+    #fig_3.add_trace(go.Pie(labels=df_accuracy['names'], values=df_accuracy['values'], name="Acurácia"))
+    
+    #colors = [color_4, color_5]
+
+    #fig_3.update_traces(hole=0.7, hoverinfo='none',  marker=dict(colors=colors), showlegend=False, textinfo='none')
+
+    #fig_3.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200,
+    #                    annotations=[dict(text=str(df_accuracy['values'][0]).replace('.',',')+'%', x=0.5, y=0.5, font_size=20, showarrow=False)])
+
+    #st.plotly_chart(fig_3,  use_container_width = True)
+    
 
 with col5:
     '''
@@ -157,6 +183,6 @@ with col5:
 
     fig_4.update_traces(marker_color=marker_color)
 
-    fig_4.update_layout(margin=dict(t=0, b=0, l=0, r=0),autosize=False, width=200, height=200)
+    fig_4.update_layout(margin=dict(t=20, b=0, l=0, r=0),autosize=False, width=200, height=240)
 
     st.plotly_chart(fig_4,  use_container_width = True)
