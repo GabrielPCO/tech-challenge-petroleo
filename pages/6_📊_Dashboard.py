@@ -109,7 +109,7 @@ with col3:
         col3_1, col3_2 = st.columns(2)
         with col3_1:
             '''
-            ### Barril de petroleo
+            ### Barril de petróleo
             '''
             st.metric(label='Dados totais', value=df_ipeadata.shape[0])
             num_01 = df_ipeadata['preco'].values[0]
