@@ -123,7 +123,7 @@ with col3:
 with col4:
     st.markdown("<h3 style='text-align: center;'>Erro do modelo</h3>", unsafe_allow_html=True)
     
-    df_erro = pd.DataFrame({'names': ['Erro médio quadrado', 'Erro médio absoluto'],
+    df_erro = pd.DataFrame({'names': ['Erro quadrático médio', 'Erro médio absoluto'],
                             'values':[3.22,1.23]})
     
     fig_3 = go.Figure()
