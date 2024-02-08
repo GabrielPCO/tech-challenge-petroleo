@@ -96,7 +96,7 @@ df["Preço do barril do petróleo bruto Brent (FOB) em US$ (Dólar americano)"] 
 # Convertendo o DataFrame em .csv
 csv = convert_df(df)
 
-st.markdown(':gray[*Atualizado em 01/02/2024*]')
+st.markdown(':gray[*Atualizado em 08/02/2024*]')
 
 st.dataframe(df)
 
