@@ -119,19 +119,19 @@ with tab0:
     df_query['preco'].describe()
     ```
     ```
-    count    11107.000000
-    mean        52.836209
-    std         33.225370
+    count    11113.000000
+    mean        52.853452
+    std         33.224684
     min          9.100000
-    25%         20.440000
+    25%         20.450000
     50%         47.950000
-    75%         75.855000
+    75%         75.880000
     max        143.950000
     Name: preco, dtype: float64
     ```
-    Atualmente, a série temporal é composta por 11107 registros de preço do barril de petróleo, uma quantidade razoável de dados para serem explorados.
+    Atualmente, a série temporal é composta por 11113 registros de preço do barril de petróleo, uma quantidade razoável de dados para serem explorados.
 
-    Além disso, a média de preço está em aproximadamente US\$52,84 com um desvio de US\$33,23. O preço máximo é de US\$143,95 e o mínimo de US\$9,10.
+    Além disso, a média de preço está em aproximadamente US\$52,85 com um desvio de US\$33,22. O preço máximo é de US\$143,95 e o mínimo de US\$9,10.
     '''
 with tab1:
     '''
